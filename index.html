@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/duotone/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css">
 
+    <!-- Box icons -->
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
     <!-- CSS Customizado -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <nav>
         <header>
@@ -18,19 +22,16 @@
                 <i class="ph-duotone ph-beer-stein" title="Beer Shop"></i>
             </div>
 
-            <!-- <div class="search-container">
-                <input type="search" placeholder="Estou procurando por...">
-                <span class="search-icon">🔍</span>
-            </div> -->
-
             <div class="search-container">
+                <!-- Barra de busca -->
                 <input type="search" placeholder="Buscar...">
-                <!-- <span class="search-icon">🔍</span> -->
+                <!-- Ícone da lupa -->
                 <i class="ph-bold ph-magnifying-glass search-icon"></i>
-              </div>
+            </div>
 
             <div class="nav-login">
                 <div>
+                    <!-- Ícone do carrinho -->
                     <i class="ph-bold ph-shopping-cart-simple"></i>
                 </div>
 
@@ -38,30 +39,113 @@
                     <a href="#">Login</a>
                 </div>
             </div>
+            
         </header>
 
+        <!-- Menu de links -->
         <div>
             <!-- ul>li*5>a -->
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#destaques">Destaques</a></li>
-                <li><a href="#produtos">Produtos</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#pagamento">Pagamento</a></li>
+                <li><a href="#newsletter">Newsletter</a></li>
+                <!-- <li><a href="#sobre">Sobre</a></li> -->
             </ul>
         </div>
     </nav>
 
-    <header>HEADER</header>
+    <header>
+        <div class="capa"></div>
+    </header>
 
     <main>
-        <section>DESTAQUES</section>
+        <section id="destaques">
+            <h2>Destaques</h2>
 
-        <section>FORMA PAGAMENTO</section>
+            <!-- Cards -->
+            <div>
+                <article class="destaques">
+                    <div class="foto-destaque">
+                        <img src="./img/weiss-beer.png" alt="Cerveja">
+                    </div>
+                    <h3>Paulaner</h3>
+                    <p>Weiss - Cerveja de trigo</p>
+                </article>
 
-        <section>NEWSLETTER</section>
+                <article class="destaques">
+                    <div class="foto-destaque">
+                        <img src="./img/notebook.jpg" alt="i7">
+                    </div>
+                    <h3>Dell</h3>
+                    <p>i7 14a geração 8GB RAM</p>
+                </article>
+
+                <article class="destaques">
+                    <div class="foto-destaque">
+                        <img src="./img/nike.jpg" alt="Tênis Nike">
+                    </div>
+                    <h3>Paulaner</h3>
+                    <p>Weiss - Cerveja de trigo</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="pagamento">
+            <h2>Formas de Pagamento</h2>
+            
+            <div>
+                <!-- Pix -->
+                <article class="pagamento">
+                    <h2 class="basico">Pix</h2>
+
+                    <img src="https://www.bcb.gov.br/content/estabilidadefinanceira/piximg/logo_pix.png" alt="icone">
+
+                    <p>10% de desconto no Pix</p>
+
+                    <button>Comprar</button>
+                </article>
+
+                <!-- Cartão -->
+                <article class="pagamento">
+                    <h2 class="basico">Cartão</h2>
+
+                    <img src="https://cdn.pixabay.com/photo/2020/03/02/19/27/banking-4896669_1280.jpg" alt="icone">
+
+                    <p>Parcele em até 3x sem juros</p>
+
+                    <button>Comprar</button>
+                </article>
+
+                <!-- Boleto -->
+                <article class="pagamento">
+                    <h2 class="basico">Boleto</h2>
+
+                    <img src="https://imgs.search.brave.com/ISboV_-8aM1e2_od5AuDUoY4es3B0GHEdpVtpGYxES4/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9mYWNp/bDEyMy5jb20uYnIv/d3AtY29udGVudC91/cGxvYWRzL2JvbGV0/by1iYW5jJUMzJUEx/cmlvLWNhbXBvcy04/MDB4NDAwLmpwZw" alt="icone">
+
+                    <p>5% de desconto no Pix</p>
+
+                    <button>Comprar</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <form action="">
+                <h2>Assine a Newsletter</h2>
+    
+                <input type="email" id="email" placeholder="Informe seu melhor e-mail">
+                <button>Assinar</button>
+            </form>
+        </section>
 
         <footer>FOOTER</footer>
     </main>
+
+    <aside class="whats">
+        <a href="https://wa.me/5585984100173?text=Buenas!%20Quero%20aulas%20extras!" target="_blank">
+            <i class="bx bxl-whatsapp"></i>
+        </a>
+    </aside>
 </body>
 </html>
