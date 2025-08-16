@@ -62,7 +62,6 @@ nav {
         color: #fff7a3;
         transition: 0.3s;
         display: inline-block;
-        /* border: solid red; */
 
         &:hover {
             color: #ffffff;
