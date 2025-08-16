@@ -1,6 +1,19 @@
 /* Fonte Montserrat */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* Variáveis */
+:root {
+    /* Margem top das section */
+    --margem-section: 8rem;
+    --padding-section: 9rem;
+
+    /* Sombra */
+    --sombra: 0 5px 10px 1px #00000065;
+
+    /* Paleta de cores */
+    --cor-1: #232323;
+}
+
 /* Reset */
 * {
     margin: 0;
@@ -17,12 +30,21 @@ html {
 
 /* NavBar */
 nav {
-    background-color: #232323;
+    /* Navbar fixa */
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
+    /* height: 8rem; */
+    height: var(--margem-section);
+
+    background-color: var(--cor-1);
     padding: 1rem 4rem;
 
     header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 0.5rem;
     }
 
@@ -33,12 +55,14 @@ nav {
         justify-content: flex-end;
     }
 
+    /* Links */
     a {
         text-decoration: none;
         padding: 0.5rem 0.8rem;
         color: #fff7a3;
         transition: 0.3s;
         display: inline-block;
+        /* border: solid red; */
 
         &:hover {
             color: #ffffff;
@@ -57,7 +81,7 @@ nav {
 .search-container {
     position: relative;
     width: 100%;
-    max-width: 300px;
+    max-width: 25rem;
 }
 
 .search-container input {
@@ -69,6 +93,8 @@ nav {
     position: absolute;
     right: 0.8rem;
     top: 0.4rem;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
     pointer-events: none; /* deixa o clique passar pelo ícone */
     font-size: 1.5rem;
     color: #888;
@@ -89,12 +115,14 @@ nav {
     background-size: cover;
     height: 60vh;
     width: 100%;
+    margin-top: var(--margem-section)
 }
 /* /Header */
 
 section {
     min-height: 100vh;
     padding: 2rem 4rem;
+    padding-top: var(--margem-section)
 }
 
 #destaques div, #pagamento div{
@@ -104,7 +132,9 @@ section {
 
 .destaques {
     width: 20rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin-top: 2rem;
 
     h3, p {
@@ -156,7 +186,7 @@ section {
 
     &:hover {
         /* Eixo X, eixo Y, desfoque, largura, cor */
-        box-shadow: 0 5px 10px 1px #0000003b;
+        box-shadow: var(--sombra);
         transform: translateY(-0.5rem);
     }
 }
@@ -171,7 +201,6 @@ section {
         min-height: 16rem;
         padding: 4rem;
         border-radius: 0.5rem;
-        /* transition: all 1s ease; */
 
         &:hover {
             background: #e1e1e1;
@@ -234,7 +263,7 @@ footer {
     width: 5rem;
     background-color: #00e441;
     border-radius: 50%;
-    box-shadow: 0 5px 8px 1px #00000065;
+    box-shadow: var(--sombra);
     transition: 0.3s ease;
 
     &:hover {
@@ -244,5 +273,133 @@ footer {
     i {
         color: #ffffff;
         font-size: 5rem;
+    }
+}
+
+.responsividade {
+    max-width: 576px;
+}
+
+/* ===== Responsividade - Media Queries ===== */
+
+/* Mobile First (primeiro o formato de celular) */
+
+/* Extra Small - celular em pé (portrait) */
+/* @media (max-width: 576px) { */
+@media (min-width: 0) {
+    
+    nav {
+        padding: 1rem 0.5rem;
+        
+        ul {
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        a {
+            padding: 0.5rem 0.5rem;
+        }
+
+        .search-container {
+            max-width: 15rem;
+        }
+
+        /* TESTE */
+        background-color: #60baf6;
+    }
+
+    #destaques div, #pagamento div{
+        flex-direction: column;
+        align-items: center;
+
+        .destaques {
+            margin-bottom: 3rem;
+        }
+    }
+
+    section {
+        padding: 1rem;
+        padding-top: var(--padding-section);
+        min-height: auto;
+    }
+
+    #newsletter {
+        form {
+            padding: 2rem;
+        }
+    }
+}
+
+/* Small - celular em deitado (landscape) */
+@media (min-width: 576px) {
+    nav {
+
+        /* TESTE */
+        background-color: #c8b700;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    nav {
+        padding: 1rem 4rem;
+        
+        ul {
+            justify-content: flex-end;
+        }
+
+        a {
+            padding: 0.5rem 0.5rem;
+        }
+
+        .search-container {
+            max-width: 250px;
+        }
+
+        /* TESTE */
+        background-color: #d4009f;
+    }
+}
+
+/* Notebook */
+@media (min-width: 992px) {
+    nav {
+        .search-container {
+            max-width: 25rem;
+        }
+
+        /* TESTE */
+        background-color: #00b433;
+    }
+
+    #destaques div, #pagamento div{
+        flex-direction: row;
+        gap: 2rem;
+        /* align-items: center; */
+
+        .destaques {
+            margin-bottom: 3rem;
+        }
+
+        /* Equilavente a um porta-retrato */
+        .foto-destaque {
+            width: 16rem;
+            height: 16rem;
+        }
+    }
+}
+
+/* Desktop (telas grandes) */
+@media (min-width: 1200px) {
+    nav {
+
+        /* TESTE */
+        background-color: #5f6e63;
+    }
+
+    #destaques > div, #pagamento > div {
+        max-width: 90vw;
+        display: flex;
+        justify-content: center;
     }
 }
